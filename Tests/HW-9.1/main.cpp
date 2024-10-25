@@ -28,3 +28,4 @@ int main() {
     std::cout << "Pisano period length for mod " << m << ": " << pisanoPeriod(m) << std::endl;
     return 0;
 }
+// commit№1
