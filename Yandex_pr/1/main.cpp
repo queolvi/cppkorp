@@ -1,15 +1,15 @@
 #include<iostream>
 #include<string>
-#include <algorithm>
+#include <algorithm> // для функции std::sort
 
 std::string r_tr(int a, int b, int c);
 
 int main() {
 
-int a = 0, b = 0, c = 0;
-std::cin >> a >> b >> c;
-std::string res = r_tr(a,b,c);
-std::cout << res;
+    int a = 0, b = 0, c = 0;
+    std::cin >> a >> b >> c;
+    std::string res = r_tr(a,b,c);
+    std::cout << res;
 
     return 0;
 }
@@ -26,7 +26,7 @@ std::string r_tr(int a, int b, int c){
 
         if (a + b > c && a + c > b && b + c > a) {
             
-            if (a * a + b * b == c * c && a != b && a != c && b != c) { 
+            if (a * a + b * b == c * c) {
                 return "YES";
             } else {
                 return "UNDEFINED";
