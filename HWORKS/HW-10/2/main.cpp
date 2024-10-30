@@ -1,59 +1,46 @@
 #include<iostream>
+#include<vector>
 
-int num_factorize(int* n, int size);
+std::vector<int> prime_factorization (int n);
 
-int main() {
+int main () {
 
-    int size = 0;
-    std::cout << "Enter size of the number: "; std::cin >> size;
+int n = 0;
+std::cout << "Enter number N: "; std::cin >> n;
+    
+std::vector<int> num_factors = prime_factorization(n);
 
-    int* num = new int[size];
-
-    for(int i = 0; i < size; ++i) {
-        std::cin >> num[i];
-    }
-
-    int result = num_factorize(num, size);
-
-    std::cout << "Result: " << result;
-
-    delete[] num; 
+if(num_factors.empty()) {
+    std::cout << "Number " << n << " -- is prime" << std::endl; 
+} else {
+    std::cout << "Prime factorizes of the number " << n << std::endl;
+    int sum = 0;
+    for (int num_factor : num_factors) {
+        std::cout << num_factor << " ";
+        sum += num_factor;
+    } 
+    std::cout << std::endl;
+    std::cout << "Sum of the prime factors: " << sum << std::endl;
+}
     return 0;
 }
 
+std::vector<int> prime_factorization (int n) {
+std::vector<int> num_factors;
 
-int num_factorize(int* n, int size) {
-
-    int fact = 0;
-    int *arr = new int[size];
-
-    if(arr* < 0 && size <= 0) {
-        return 1;
+if (n <= 1) {
+    return num_factors;
     }
 
-    if(size <= 10) {
-        for(int i = 0; i < 9; ++i) {
-            fact += arr[i];
-            fact /= 2;
+for (int i = 2; i * i <= n; ++i) {
+    while (n % i == 0) {
+        num_factors.push_back(i);
+        n /= i;
         }
-        return fact;
+}
+if (n > 1) {
+    num_factors.push_back(n);
     }
 
-    if(size <= 100) {
-        for(int i = 0; i < 99; ++i) {
-            fact += arr[i];
-            fact /= 4;
-        }
-        return fact;
-    }
-    
-    if(size <= 1000) {
-        for(int i = 0; i < 999; ++i) {
-            fact += arr[i];
-            fact /= 8;
-        }
-        return fact;
-    }
-    
-return 1;
+    return num_factors;
 }
