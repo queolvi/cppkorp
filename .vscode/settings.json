@@ -57,6 +57,11 @@
         "iomanip": "cpp",
         "fstream": "cpp",
         "vector": "cpp",
-        "random": "cpp"
+        "random": "cpp",
+        "functional": "cpp",
+        "list": "cpp",
+        "numeric": "cpp",
+        "unordered_map": "cpp",
+        "xhash": "cpp"
     }
 }
