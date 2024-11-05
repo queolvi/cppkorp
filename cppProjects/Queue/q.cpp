@@ -7,26 +7,26 @@ std::mutex mutex; // Мьютекс
 int counter = 0; // Общий ресурс
 
 void p0() {
-  std::cout << "Процесс p0: ";
+  std::cout << "Process p0: ";
   for (int i = 0; i < 5; ++i) {
     std::lock_guard<std::mutex> lock(mutex); // Блокировка мьютекса
-    std::cout << "Изменил счетчик: " << ++counter << std::endl;
+    std::cout << "Change count: " << ++counter << std::endl;
   }
 }
 
 void p1() {
-  std::cout << "Процесс p1: ";
+  std::cout << "Process p1: ";
   for (int i = 0; i < 5; ++i) {
     std::lock_guard<std::mutex> lock(mutex); // Блокировка мьютекса
-    std::cout << "Прочитал счетчик: " << counter << std::endl; 
+    std::cout << "Read count: " << counter << std::endl; 
   }
 }
 
 void p2() {
-  std::cout << "Процесс p2: ";
+  std::cout << "Process p2: ";
   for (int i = 0; i < 5; ++i) {
     std::lock_guard<std::mutex> lock(mutex); // Блокировка мьютекса
-    std::cout << "Прочитал счетчик: " << counter << std::endl; 
+    std::cout << "Read count: " << counter << std::endl; 
   }
 }
 

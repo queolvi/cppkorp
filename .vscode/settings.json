@@ -69,6 +69,8 @@
         "sstream": "cpp",
         "stop_token": "cpp",
         "thread": "cpp",
-        "semaphore": "cpp"
+        "semaphore": "cpp",
+        "condition_variable": "cpp",
+        "mutex": "cpp"
     }
 }
