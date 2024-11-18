@@ -1,22 +1,37 @@
-#include<iostream>
+#include <iostream>
 
-int pow_n(int n, int pow);
-
+unsigned moveright(int *arr, int key, unsigned last);
+void insertion_sort(int *arr, unsigned sz);
 
 int main() {
-
-    int n = 0; int pow = 0;
-    std::cout << "Enter number: " ; std::cin >> n;
-    std::cout << "Enter power for this number: " ; std::cin >> pow;
-    std::cout << "Result: " << pow_n(n, pow);
+    unsigned size = 0; std::cout << "Enter size of the array: "; std::cin >> size;
+    int* arr = new int[size];
+    std::cout << "Enter elements from the array: \n";
+    for(int i = 0; i < size; ++i) {
+        std::cin >> arr[i];
+    }
+    insertion_sort(arr, size);
+    for(int i = 0; i < size; ++i) {
+        std::cout << arr[i] << " ";
+    }
+    std::cout << std::endl;
+    delete[] arr;
     return 0;
 }
 
-int pow_n(int n, int pow) {
-    if(pow < 0) return pow_n(1/n, -n);
-    if(pow == 0) return 1;
-    if(pow % 2 == 0) return pow_n(n * n, pow /2);
-    else {
-        return n * pow_n(n * n, (pow -1) /2 );
-    } 
+unsigned moveright(int *arr, int key, unsigned last) {
+    unsigned pos = last;
+    while (pos > 0 && arr[pos - 1] > key) {
+        arr[pos] = arr[pos - 1];
+        pos--;
+    }
+    return pos;
+}
+
+void insertion_sort(int *arr, unsigned sz) {
+    for (unsigned i = 1; i < sz; ++i) { //Начинаем с 1, т.к. первый элемент уже отсортирован
+        int key = arr[i];
+        unsigned pos = moveright(arr, key, i);
+        arr[pos] = key;
+    }
 }
