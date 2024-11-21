@@ -49,3 +49,5 @@ unsigned moveright(int* arr, int key, unsigned last) {
     }
     return pos;
 }
+
+//for comm
