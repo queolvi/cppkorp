@@ -3,6 +3,12 @@
 void insertion_sort(int* arr, unsigned sz);
 unsigned moveright(int* arr, int key, unsigned last);
 
+
+void f_increase(int a, int b);
+void f_decrease(int a, int b);
+ 
+
+
 int main() {
 
 #ifdef AA
@@ -19,19 +25,13 @@ for(int i = 0; i < size; ++i) {
     delete[] arr;
     return 0;
 #endif
-
-unsigned size = 0; std::cout << "Enter size of the array " ; std::cin >> size;
-int* arr = new int[size];
-for(int i = 0; i < size; ++i) {
-    std::cin >> arr[i];
-}
-insertion_sort(arr, size);
-
-for(int i = 0; i < size; ++i) {
-    std::cout << arr[i] << " ";
-}
-delete[] arr;
-return 0;
+    unsigned size = 8;
+    int arr[size] = {1,3,6,8,4,5,2,11};
+    insertion_sort(arr,size);
+    for(int i = 0; i < size; ++i) {
+        std::cout << arr[i] << " ";
+    }
+    return 0;
 }
 
 void insertion_sort(int* arr, unsigned sz) {
@@ -51,9 +51,14 @@ unsigned moveright(int* arr, int key, unsigned last) {
             return pos;
             }
         }
-        
     }
     return pos;
 }
 
-//for comm
+void f_increase(int a, int b) {
+
+}
+void f_decrease(int a, int b) {
+
+}
+// заготовки есть, осталось дработатьЫ
