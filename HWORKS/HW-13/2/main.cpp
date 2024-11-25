@@ -49,13 +49,31 @@ int countTriangles(int* arr, int n) {
 
     int count = 0; // заводим счётчик
     for(int i = 0; i < n - 2; ++i) { 
+        std::cout << "First passage \t \n";
         for(int j = i + 1; j < n - 1; ++j) {
+            std::cout << "Second passage \t \n";
             for(int k = j + 1; k < n; ++k) {
+                std::cout << "Third passage \t \n";
+                
+                #ifdef CRITICAL_SEC_C_TRIANGLES_AB
+                if(arr[i] + arr[j] <  arr[k]) {
+                    std::cout << "Break is worked";
+                    break;
+                } else {
+                        count++;
+                }
+                #endif
+
+                #ifdef CRITICAL_SEC_C_TRIANGLES_AA
                 if(arr[i] + arr[j] > arr[k]) {
                     count++;
                 } else {
+                    std::cout << "Break is worked !!";
                     break;
                 }
+                #endif
+
+
                 // нет необходимости проверять остальные комбинации для текущих i и j,
                 // потому что массив отсортирован.
             }
