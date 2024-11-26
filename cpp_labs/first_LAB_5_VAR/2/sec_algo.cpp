@@ -1,30 +1,23 @@
 // Даны три числа. Определить, являются ли они последовательными числами арифметичесской прогресии. Ессли да, то найти её разность.
 
-#include<iostream>
-
-bool is_arifmethic_progression(double num_1, double num_2, double num_3);
-
-int main() {
-
-double num_1 = 0, num_2 = 0, num_3 = 0;
-std::cout << "Enter three numbers: \n"; std::cin >> num_1 >> num_2 >> num_3;
-
-bool res = is_arifmethic_progression(num_1,num_2,num_3);
-
-if(res) {
-	std::cout << "Nums " << num_1 << ", " << num_2 << ", and " << num_3 << " - is arifmethic progression \n";   
-} else if(!res) {
-	std::cout << "Nums " << num_1 << ", " << num_2 << ", and " << num_3 << " - is not arifmethic progression \n"; 
-}
-
-
-	return 0;
-}
-
-bool is_arifmethic_progression(double* a, double n, double d) {
- 
- 
-
-
+#include <cmath> 
+#include <iostream> 
+using namespace std; 
+int main() { 
+    const size_t n = 3; 
+    cout << ">>> "; 
+    double box[n]{}; 
+    for (auto& x : box) cin >> x; 
+    bool flag = true; 
+    auto sub = box[1] - box[0]; 
+    for (size_t i = 2; i < n; ++i) { 
+        auto next = box[i] - box[i - 1]; 
+        if (fabs(sub - next) > 1e-12) { 
+            flag = false; 
+            break; 
+        } 
+    } 
+    if (flag) cout << "YES " << sub << '\n'; 
+    else puts("NO"); 
 }
 
