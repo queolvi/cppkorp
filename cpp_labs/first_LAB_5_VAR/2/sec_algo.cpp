@@ -21,23 +21,10 @@ if(res) {
 	return 0;
 }
 
-bool is_arifmethic_progression(double num_1, double num_2, double num_3) {
-// 1 1 
-// 2 2
-// 3 
-#ifdef WRONG_ANWSER
-	if(num_1 < num_2 < num_3 || num_2 < num_1 < num_3 ||
-		num_3 < num_1 < num_2 || num_2 < num_3 < num_3 ||
-		num_1 < num_3 < num_2 || num_3 < num_2 < num_1
-	       &&
-       		num_1 == num_2 - num_3 && num_2 == num_1	       
-	) return true;
-	else {
-	return false;
-	}
-#endif
-	// great if's() explonation
-	// if(num_1 < num_2 < num_3 && num_1 == num_2 - num_3)
-	// and next's
+bool is_arifmethic_progression(double* a, double n, double d) {
+ 
+ 
+
+
 }
 

@@ -7,8 +7,13 @@ bool greater(int a, int b);
 bool choice_of_dir;
 
 int main() {
-    int arr[] = {5, 2, 8, 1, 9, 12, 0, 17};
-    unsigned sz = sizeof(arr) / sizeof(arr[0]);
+    unsigned sz = 0; std::cout << "Enter size of the array: "; std::cin >> sz;
+    int* arr = new int[sz];
+    std::cout << "Enter elements from yours array: \n"; 
+    for(int i = 0; i < sz; ++i) {
+    	std::cin >> arr[i];
+    	}
+    
     
     std::cout << "if you wanna to yours array wil be sorted with foo less(), press 1, if another way foo large() - press 0 \n";
     std::cin >> choice_of_dir; std::cout << "\n"; 
@@ -25,7 +30,7 @@ int main() {
         std::cout << arr[i] << " ";
     }
     std::cout << std::endl;
-
+	delete[] arr;
     return 0;
 }
 
