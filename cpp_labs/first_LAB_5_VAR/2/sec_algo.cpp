@@ -1,23 +1,25 @@
 // Даны три числа. Определить, являются ли они последовательными числами арифметичесской прогресии. Ессли да, то найти её разность.
 
-#include <cmath> 
-#include <iostream> 
-using namespace std; 
-int main() { 
-    const size_t n = 3; 
-    cout << ">>> "; 
-    double box[n]{}; 
-    for (auto& x : box) cin >> x; 
-    bool flag = true; 
-    auto sub = box[1] - box[0]; 
-    for (size_t i = 2; i < n; ++i) { 
-        auto next = box[i] - box[i - 1]; 
-        if (fabs(sub - next) > 1e-12) { 
-            flag = false; 
-            break; 
-        } 
-    } 
-    if (flag) cout << "YES " << sub << '\n'; 
-    else puts("NO"); 
+#include<iostream> 
+#include<cmath>
+
+struct Point {
+
+	double x, y;
+};
+
+struct Triangle {
+
+
+	 Point triangle_sides[3].Point[Point.x,Point.y]; 
+	 const double& A = triangle_sides[0];
+	 const double& B = triangle_sides[1];
+	 const double& C = triangle_sides[2];
+};
+
+
+int main() {
+
+	return 0;
 }
 
