@@ -3,23 +3,29 @@
 #include<iostream> 
 #include<cmath>
 
-struct Point {
 
-	double x, y;
-};
-
-struct Triangle {
-
-
-	 Point triangle_sides[3].Point[Point.x,Point.y]; 
-	 const double& A = triangle_sides[0];
-	 const double& B = triangle_sides[1];
-	 const double& C = triangle_sides[2];
-};
-
+bool is_arifmethic_progression(double a, double b, double c);
+double my_fabs(double x);
+double find_the_difference_of_an_arithmethic_progression(double a, double b, double c);
 
 int main() {
 
 	return 0;
 }
+
+bool is_arifmethic_progression(double a, double b, double c) {
+	double epsilon = 1e - 9;
+	return 	my_fabs(2 * b - (a + c)) < epsilon;
+}
+
+double my_fabs(double x) {
+	return x < 0.0 ? -x : x;
+}
+
+double find_the_difference_of_an_arithmetic_progression(double a, double b, double c) {
+	if(is_arithmetic) 
+}
+
+
+
 
